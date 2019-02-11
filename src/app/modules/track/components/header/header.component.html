@@ -1,0 +1,31 @@
+<header>
+  <nav>
+    <mat-toolbar color="accent">
+      <mat-toolbar-row>
+          <div class="navbar-header">  
+              <img src="../assets/img3.jpg" class="img-rounded" alt="Cinque Terre" width="60px" height="60px">
+              </div>
+        <span id="branding" [routerLink]="['/']">Muzix</span>
+        <section class="txt-center">
+          <mat-chip-list>
+            <mat-chip color="accent" class="navLinks" selected [routerLink]="['/home']" >Home</mat-chip>
+            <mat-icon class="pipes">remove</mat-icon>
+            <mat-chip color="accent" class="navLinks" selected [routerLink]="['/playlist']">Playlist</mat-chip>
+          </mat-chip-list>
+        </section>
+        <mat-form-field appearance="outline">
+            <mat-label>Search</mat-label>
+            <input matInput placeholder="Enter Track Name" (input)="search($event.target.value)">
+            <mat-icon matSuffix>search</mat-icon>
+          <!-- <button 
+          mat-button
+          mat-flat-button 
+          color="accent"
+          >
+            <mat-icon>search</mat-icon>
+          </button> -->
+        </mat-form-field>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </nav>
+</header>

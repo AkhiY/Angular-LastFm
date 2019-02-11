@@ -1,0 +1,10 @@
+<section class="track-container"
+fxLayout
+fxLayout.sm="column"
+fxLayoutAlign="center"
+>
+    <app-card *ngFor="let track of tracks" [track]="track" class="track-card"
+    (trackDeleteEvent)='deleteTrack($event)'
+    (trackUpdateEvent)='updateTrack($event)'
+    ></app-card>
+</section>

@@ -1,0 +1,43 @@
+#branding {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.txt-center {
+    text-align: center;
+    display: inline;
+    margin: auto;
+}
+
+.navLinks {
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+mat-chip {
+    padding: 1.25rem;
+}
+
+.pipes {
+    transform: rotate(90deg);
+    padding: 0%;
+    margin: 0%;
+}
+
+mat-chip:hover {
+    box-shadow: 2.5px 5px black;
+}
+
+mat-form-field {
+    display: inline-block;
+}
+
+mat-form-field {
+    font-size: 15px;
+    padding: 0px;
+    margin: auto;
+}
+
+mat-form-field > input{
+    border-radius: 10px;
+}

@@ -1,0 +1,65 @@
+<mat-card class="track-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{ track.trackName }}</mat-card-title>
+      <mat-card-subtitle>{{ track.trackSinger }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{ track.trackImageUrl }}" alt="Photo of {{ track.trackId }}">
+    <mat-card-content>
+      <p>
+        {{ track.trackComment }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button 
+      mat-fab color="accent"
+      matTooltip="Add to Playlist"
+      matTooltipPosition="above"
+      [ngClass]="{'d-none': !isHome}"
+      (click)='addTrack()'
+      >
+        <mat-icon [inline]="true">add</mat-icon>
+      </button>
+
+      <button 
+      mat-fab color="accent"
+      matTooltip="Remove to Playlist"
+      matTooltipPosition="above"
+      [ngClass]="{'d-none': isHome}"
+      (click)="deleteTrack()"
+      >
+        <mat-icon [inline]="true">delete_outline</mat-icon>
+      </button>
+
+      <button 
+      mat-fab color="accent"
+      matTooltip="Edit Track Comment"
+      matTooltipPosition="above"
+      [ngClass]="{'d-none': isHome}"
+      (click)="updateTrack()"
+      >
+        <mat-icon [inline]="true">border_color</mat-icon>
+      </button>
+
+      <button 
+      mat-fab color="accent"
+      matTooltip="Play Track"
+      matTooltipPosition="above"
+      (click)='openTrackUrl()'
+      >
+        <mat-icon [inline]="true">play_arrow</mat-icon>
+      </button>
+    </mat-card-actions>
+</mat-card>
+
+
+<ng-template #callAPIDialog>
+  <h2 matDialogTitle>Track Comment : </h2>
+  <mat-form-field>
+    <input matInput placeholder="Enter Comment" #TrackComment value="{{ track.trackComment }}">
+  </mat-form-field>
+  <mat-dialog-actions align="end">
+      <button mat-button matDialogClose="no">No</button>
+      <button mat-button matDialogClose="yes">Yes</button>
+  </mat-dialog-actions>
+</ng-template>
